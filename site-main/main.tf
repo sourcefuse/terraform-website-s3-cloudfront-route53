@@ -40,11 +40,11 @@ resource "aws_s3_bucket" "website_bucket" {
   }
   
   cors_rule {
-    allowed_headers = ["*"]
-    allowed_methods = ["GET"]
-    allowed_origins = ["*"]
-    expose_headers  = ["ETag"]
-    max_age_seconds = 3000
+    allowed_headers = "${var.cors_allowed_headers}"
+    allowed_methods = "${var.cors_allowed_methods}"
+    allowed_origins = "${var.cors_allowed_origins}"
+    expose_headers  = "${var.cors_expose_headers}"
+    max_age_seconds = "${var.cors_max_age_seconds}"
   }
 
   //  logging {
